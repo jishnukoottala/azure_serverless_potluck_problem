@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "route": "dishes/{id}",
+      "methods": [
+        "put"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "dishDocument",
+      "databaseName": "potluckdb",
+      "collectionName": "MyCollection",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "potluckgamedb_DOCUMENTDB",
+      "partitionKey": "/friend"
+    }
+  ]
+}
